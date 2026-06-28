@@ -1,0 +1,158 @@
+/* ==========================================================================
+    CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+:root {
+    --bg-principal: #0f172a;
+    --bg-card: #1e293b;
+    --texto-principal: #f8fafc;
+    --texto-secundario: #94a3b8;
+    --cor-primaria: #38bdf8;
+    --cor-primaria-hover: #0ea5e9;
+    --cor-sucesso: #2dd4bf;
+    --cor-sucesso-hover: #14b8a6;
+    --borda: #334155;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-principal);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--borda);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+/* ==========================================================================
+   ELEMENTOS DE TEXTO
+   ========================================================================== */
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    color: var(--texto-principal);
+}
+
+#textoAleatorio {
+    font-size: 1.1rem;
+    color: var(--texto-secundario);
+    margin-bottom: 24px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: italic;
+}
+
+label {
+    display: block;
+    text-align: left;
+    font-size: 0.9rem;
+    color: var(--texto-secundario);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   COMPONENTES
+   ========================================================================== */
+button {
+    cursor: pointer;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Botão de Sortear Frase */
+#botao {
+    background-color: var(--cor-primaria);
+    color: #0f172a;
+    width: 100%;
+}
+
+#botao:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+#botao:active, #botaoAdd:active {
+    transform: scale(0.98);
+}
+
+/* Grupo do Formulário */
+.input-group {
+    display: flex;
+    gap: 8px;
+}
+
+input[type="text"] {
+    flex: 1;
+    background-color: var(--bg-principal);
+    border: 1px solid var(--borda);
+    padding: 12px;
+    border-radius: 8px;
+    color: var(--texto-principal);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus {
+    border-color: var(--cor-primaria);
+}
+
+/* Botão de Salvar Nova Frase */
+#botaoAdd {
+    background-color: var(--cor-sucesso);
+    color: #0f172a;
+}
+
+#botaoAdd:hover {
+    background-color: var(--cor-sucesso-hover);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 400px) {
+    .card {
+        padding: 20px;
+    }
+    
+    .input-group {
+        flex-direction: column;
+    }
+    
+    #botaoAdd {
+        width: 100%;
+    }
+}
